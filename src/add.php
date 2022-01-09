@@ -48,7 +48,14 @@
 </body>
 <script language="JavaScript">
     function Submit(){
-
+        $.ajax({
+        url:"process_add.php",
+        type:"POST",
+        data:{ten:$("#ten").val() ,thoigian:$("#thoigian").val() ,linhvuc:$("#linhvuc").val() ,nhiemvu:$("#nhiemvu").val() ,coquan:$("#coquan").val() ,},
+        success:function(data){
+            window.location="/src"
+        }
+    })
     }
 </script>
 </html>
