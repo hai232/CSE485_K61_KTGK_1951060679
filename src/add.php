@@ -7,23 +7,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>textarea:focus, input:focus{
+        outline: none;
+    }</style>
     <title>KTTV BDKH</title>
     <div>Chương Trình dự án KTTV BDKH</div>
-    <a href="add.php" type="button" class="btn btn-success">Thêm</a>
-    <button type="button" class="btn btn-primary" onclick="edit()">Sửa</button>
-    <button type="button" class="btn btn-danger" onclick="delet()">Xóa</button>
-    <button type="button" class="btn btn-info" onclick="view()">Xem</button>
+    <a type="button" class="btn btn-success" onclick="Submit()">Xác Nhận</a>
 </head>
 
 <body>
 <?php
-   $conn = mysqli_connect('localhost','root','','1951060679_kttv_bdkh');
-    if(!$conn){
-    die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-    }
-
-    $sql = "SELECT * FROM duan";
-    $result = mysqli_query($conn,$sql);
 
     echo "<table class='table table-bordered'>"; // start a table tag in the HTML
     echo'    <thead>
@@ -38,35 +31,24 @@
         </tr>
         </thead>';
 
-    $rows = [];
-            while($row = mysqli_fetch_array($result))
-            {   echo '<tr> <td> <div name="foo" class="form-check">
+   echo '<tr> <td> <div name="foo" class="form-check">
                 <input class="form-check-input" type="checkbox" name="foo" value="" id="flexCheckDefault">
                 <label class="form-check-label" name="foo" for="flexCheckDefault">
                 
                 </label>
                 </div>';
-                echo "<td>" . $row['tenduan'] . "</td><td>" . $row['namthuchien'] . "</td><td>" . $row['linhvuc'] . "</td><td>" . $row['nhiemvu'] . "</td><td>" . $row['coquanthuchien'] . "</td></tr>";  //$row['index'] the index here is a field name
-            }
+                echo "<td>" . '<input type="text" id="ten">' . "</td><td>" . '<input type="text" id="thoigian">' . "</td><td>" . '<input type="text" id="linhvuc">' . "</td><td>" . '<input type="text" id="nhiemvu">' . "</td><td>" . '<input type="text" id="coquan">' . "</td></tr>";  //$row['index'] the index here is a field name
+
 
 
     echo "</table>"; //Close the table in HTML
 
-    mysqli_close($conn);
+
 ?>
 </body>
 <script language="JavaScript">
-    function add(){
+    function Submit(){
 
-    }
-    function edit(){
-        
-    }
-    function delet(){
-        
-    }
-    function view(){
-        
     }
 </script>
 </html>
