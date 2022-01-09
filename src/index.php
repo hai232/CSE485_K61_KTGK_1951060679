@@ -41,7 +41,7 @@
     $rows = [];
             while($row = mysqli_fetch_array($result))
             {   echo '<tr> <td> <div name="foo" class="form-check">
-                <input class="form-check-input" type="checkbox" name="foo" value="" id="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" name="foo" value="'.$row['maduan'].'" id="flexCheckDefault">
                 <label class="form-check-label" name="foo" for="flexCheckDefault">
                 
                 </label>
@@ -56,6 +56,7 @@
 ?>
 </body>
 <script language="JavaScript">
+    data = [];
     function add(){
 
     }
@@ -63,7 +64,15 @@
         
     }
     function delet(){
-        
+        data = [...document.querySelectorAll('.form-check-input:checked')].map(e => e.value);
+        $.ajax({
+        url:"process_delete.php",
+        type:"POST",
+        data:{maduan : data},
+        success:function(data){
+            
+        }
+        })
     }
     function view(){
         
