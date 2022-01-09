@@ -6,7 +6,6 @@
 -- Generation Time: Jan 09, 2022 at 10:02 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -18,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tt_kttv`
+-- Database: `1951060679_kttv_bdkh`
 --
 
 -- --------------------------------------------------------
