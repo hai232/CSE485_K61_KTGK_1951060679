@@ -70,7 +70,7 @@
         type:"POST",
         data:{maduan : data},
         success:function(data){
-            
+            window.location="/src"
         }
         })
     }
