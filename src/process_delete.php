@@ -7,11 +7,11 @@
     die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
     };
 
-    echo $maduan[1];
-    foreach ($index as $maduan) {
-        $sql = "DELETE FROM duan WHERE maduan = '$index'";
+    for ($i=0; $i < count($maduan) ; $i++) { 
+        $ma = $maduan[$i];
+        $sql = "DELETE FROM duan WHERE maduan = '$ma'";
         mysqli_query($conn,$sql);
-      }
+    }
     mysqli_close($conn);
 
     
